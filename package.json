@@ -1,0 +1,26 @@
+{
+  "name": "node-red-contrib-xlsx-template-lsi",
+  "version": "1.0.0",
+  "description": "Allow to generate XLSX reports",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "xlsx",
+    "templates",
+    "node-red"
+  ],
+  "author": "Daniel Delgado",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "xlsx-template": "^1.4.3"
+  },
+  "node-red" : {
+    "version": ">=1.1.2",
+    "nodes": {
+        "xlsx-template-lsi": "xlsx-template-lsi.js"
+    }
+}
+}

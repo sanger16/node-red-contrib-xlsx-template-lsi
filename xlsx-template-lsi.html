@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    RED.nodes.registerType('xlsx-template-lsi',{
+        category: 'LSI',
+        color: '#E2D96E',
+        defaults: {
+            name: {value:""}
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-file-excel-o",
+        label: function() {
+            return this.name||"xlsx-template-lsi";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="xlsx-template-lsi">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="xlsx-template-lsi">
+    <p>This node take an xlsx file as template and generate a report based on this file</p>
+    <h3><a class="red-ui-help-info-header" href="#"><i class="fa fa-angle-right"></i>Inputs</a></h3>
+    <p>The node receives an object stringified (ie, <code>JSON.stringify(object)</code>) in <code>msg.payload</code> which contain all data to fill the sheet 1 of the xlsx file template to generate the report</p>
+    <p>The object has to contain all data that is configured in the tamplate file as placeholder as decribed in the documentation of <a href="https://www.npmjs.com/package/xlsx-template?activeTab=readme">xlsx-template</a></p>
+    <p> It also receives the full path to the xlsx template (including the name of the file .xlsx) in <code>msg.template</code></p>
+    <pre>/home/user/templates/template_name.xlsx</pre>
+    <p>and the full path of the report where (including the report name .xlsx) <code>msg.report</code></p>
+    <pre>/home/user/reports/report_name.xlsx</pre>
+</script>
